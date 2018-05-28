@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Editor : MonoBehaviour
 {
+
     public GameMode gm;
 
     public enum ClickPosition { TopLeft, TopRight, BotLeft, BotRight };
@@ -117,15 +118,11 @@ public class Editor : MonoBehaviour
         gridBoard = new GridBoard(gridGame, currentCircuit);
         gridBoard.PositionInitialCamera();
 
-
-        if (Input.touchSupported)
-        {
+        
+        if(Input.touchSupported)
             CurrentState = new Smartphone_States.DefaultState(this);
-        }
         else
-        {
             CurrentState = new PC_States.DefaultState(this);
-        }
         
         inputController = new InputController(this);
     }
