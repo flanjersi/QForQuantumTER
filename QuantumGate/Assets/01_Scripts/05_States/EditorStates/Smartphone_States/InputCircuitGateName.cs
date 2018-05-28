@@ -27,13 +27,19 @@ namespace Smartphone_States
         {
             context.CurrentState = _previousState;
         }
-        public override void OnBackGateNameClick() {
+
+        public override void OnBackGateNameClick()
+		{
             OnBackButton();
         }
 
         public override void OnValidGateNameClick()
         {
             string name = context.GateNameInputField.text;
+
+			if (name.Length == 0)
+				return;
+			
             context.AddCustomGateToMenu(context.currentCircuit.GetCircuitGate(name));
 
             context.CurrentState = _previousState;

@@ -5,5 +5,5 @@ using UnityEngine;
 public class BackGateNameInputButton : MonoBehaviour
 {
     public Editor editor;
-    public void OnClick() { editor.CurrentState.OnBackGateNameClick(); }
+	public void OnClick() { editor.CurrentState.OnBackGateNameClick(); }
 }
